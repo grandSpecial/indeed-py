@@ -10,8 +10,6 @@ import re
 import nltk
 from collections import Counter
 
-from tqdm import tnrange, tqdm_notebook
-
 city = {"Victoria" : "BC", "Vancouver" : "BC", "Calgary" : "AB", "Edmonton" : "AB", "Regina" : "SK", "Saskatoon" : "SK", 
         "Winnipeg" : "MB", "Toronto" : "ON", "Ottawa" : "ON", "Kitchener" : "ON", "Waterloo" : "ON", "Montreal" : "QC", 
         "Quebec City": "QC", "Fredericton" : "NB", "St. John" : "NB", "Moncton" : "NB", "Charlottetown" : "PE",
@@ -64,7 +62,7 @@ elif depth == "mid":
 else:
     sae = "fifteen or twenty"
 
-print("\n" + "Sweet! We're about to look for the last " + sae + " job postings in " + place + " using " + target2 + " as the search term. Please, sit tight, this shouldn\'t take too long")
+print("\n" + "Sweet! We're about to look for the last " + sae + " job postings in " + place + " using " + target2 + " as the search term. Sit tight, this shouldn\'t take too long")
 url = []
 i = 0
 j = 1
@@ -73,7 +71,7 @@ while i <= sample:
     i += 10
     
 inner_url = []
-for item in tqdm_notebook(url, desc="Create list"):
+for item in url:
     page = urllib.request.urlopen(item).read()
     soup = BeautifulSoup(page, 'html.parser')
     for a in soup.find_all('a', {'href':re.compile('/rc/')}):
@@ -105,7 +103,7 @@ len_result = len(result)
 
 holding = []
 x = 0
-for line in tqdm_notebook(result, desc="Read list"):
+for line in result:
     try:
         pages = urllib.request.urlopen(line).read()
         souper = BeautifulSoup(pages, 'lxml')
@@ -158,7 +156,7 @@ lexicon.create_category("retail", ["retail"], model="reddit", size=300)
 import operator
 
 indie = []
-for m in tqdm_notebook(holding):
+for m in holding:
     individual = m.lower()
     #individual = m.replace(" ", "_")
     keys = {}
@@ -196,10 +194,10 @@ stop = stop.split('\n')
 words = [''.join(c for c in w if c.isalpha()) for w in words]
 words = [w for w in words if w not in stop and w.isalpha()]
 
-print("Top-10 hard skills among your search: " + "\n")
+print("Top-20 hard skills among your search: " + "\n")
 text = nltk.Text(words)
 freqs = nltk.FreqDist(text)
-skills = freqs.most_common(10)
+skills = freqs.most_common(20)
 for parts2 in skills:
     print(parts2)
 
