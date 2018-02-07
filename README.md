@@ -1,6 +1,6 @@
 ## Indeed job skill scraper
 
-requirements: Python3.6 and pip
+Requirements: Python3.6 and pip
 
 
 Open a cmd prompt or terminal and copy/paste the following commands. 
@@ -21,3 +21,7 @@ If all goes well, you should be prompted to choose an,
 2) Canadian city
 
 3) Depth of search 
+
+Available industries: all, computer_programming, real_estate, government, information, finance, science, construction, manufacturing, management, wholesale, entertainment, transportation, education, administrative, health, accomodation and retail
+
+Available cities: Victoria, Vancouver, Calgary, Edmonton, Regina, Saskatoon, Winnipeg, Toronto, Ottawa, Kitchener, Waterloo, Montreal, Quebec City, Fredericton, St. John, Moncton, Charlottetown, Halifax or St. Johns
