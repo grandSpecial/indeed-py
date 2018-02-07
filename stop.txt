@@ -229,6 +229,10 @@ years
 seeker
 september
 full
+high
+rdo
+cemc
+kitchenerwaterloo
 dartmouth
 email
 year
