@@ -1,6 +1,6 @@
 ## Indeed job skill scraper
 
-# indeed-py searches Indeed (Canada's largest job board) for job postings by select keyword and lists the top-20 hard-skills found in that search. It also classifies each job posting into an industry created using lexical categories with Empath, taking from the Reddit corpus.
+### indeed-py searches Indeed (Canada's largest job board) for job postings by select keyword and lists the top-20 hard-skills found in that search. It also classifies each job posting into an industry created using lexical categories with Empath, taking from the Reddit corpus.
 
 Requirements: Python3.6, pip, BS4, NLTK, EMPATH (can be installed by running requirements.txt file)
 
